@@ -13,8 +13,8 @@
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Book</th>
-        <th scope="col">Name</th>
+
+        <th scope="col">Title</th>
         <th scope="col">Author</th>
         <th scope="col">Year</th>
         <th scope="col">No. of Pages</th>
@@ -27,19 +27,6 @@
     <tbody>
       <tr>
         <th scope="row">1</th>
-        <td>
-          <img
-            src="../../../assets/images/logo.png"
-            alt="logo"
-            height="50px"
-            width="50px"
-            style="
-              margin-left: 30px;
-              border-radius: 50%;
-              border: 1px solid #fff;
-            "
-          />
-        </td>
         <td>Otto</td>
         <td>@mdo</td>
         <td>@mdo</td>
@@ -51,19 +38,7 @@
       </tr>
       <tr>
         <th scope="row">2</th>
-        <td>
-          <img
-            src="../../../assets/images/logo.png"
-            alt="logo"
-            height="50px"
-            width="50px"
-            style="
-              margin-left: 30px;
-              border-radius: 50%;
-              border: 1px solid #fff;
-            "
-          />
-        </td>
+
         <td>Thornton</td>
         <td>@fat</td>
         <td>@mdo</td>
@@ -75,4 +50,13 @@
       </tr>
     </tbody>
   </table>
+</div>
+
+<div *ngFor="let book of books">
+  {{ book.title }}
+  {{ book.author }}
+  {{ book.year }}
+  {{ book.pages }}
+  {{ book.price }}
+  {{ book.publisher }}
 </div>
