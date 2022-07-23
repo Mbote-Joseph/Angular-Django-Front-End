@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/shared/Book';
+import { BookserviceService } from 'src/app/shared/bookservice.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,15 @@ import { Book } from 'src/app/shared/Book';
 export class HomeComponent implements OnInit {
   books: Book[] = [];
 
-  constructor() {}
+  constructor(private bookService: BookserviceService) {}
+  getBooks() {
+    this.bookService.getBooks().subscribe((data) => {
+      this.books = data;
+      console.log(this.books);
+    });
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getBooks();
+  }
 }
