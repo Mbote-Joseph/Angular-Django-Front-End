@@ -14,6 +14,7 @@
 export interface Book {
   id: number;
   title: string;
+  published_date: Date;
   author: string;
   year: number;
   pages: number;
