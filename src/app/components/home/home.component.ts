@@ -18,6 +18,24 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  deleteBook(id: number) {
+    this.bookService.deleteBook(id).subscribe((data) => {
+      this.getBooks();
+    });
+  }
+
+  updateBook(book: Book) {
+    this.bookService.updateBook(book).subscribe((data) => {
+      this.getBooks();
+    });
+  }
+
+  addBook(book: Book) {
+    this.bookService.addBook(book).subscribe((data) => {
+      this.getBooks();
+    });
+  }
+
   ngOnInit(): void {
     this.getBooks();
   }
