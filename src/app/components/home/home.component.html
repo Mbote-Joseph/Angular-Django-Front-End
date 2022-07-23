@@ -10,7 +10,13 @@
   <h3>Your Book Store</h3>
 </div>
 <div class="container">
-  <button class="btn btn-primary" style="margin: 15px">
+  <!-- Button trigger modal -->
+  <button
+    type="button"
+    class="btn btn-primary"
+    data-toggle="modal"
+    data-target="#exampleModal"
+  >
     Add Book in Store
   </button>
   <table class="table table-hover">
@@ -60,11 +66,110 @@
   </table>
 </div>
 
-<div *ngFor="let book of books">
+<!-- <div *ngFor="let book of books">
   {{ book.title }}
   {{ book.author }}
   {{ book.published_date }}
   {{ book.pages }}
   {{ book.price }}
   {{ book.publisher }}
+</div> -->
+
+<div class="container">
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formValue">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Title</label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Enter title"
+                formControlName="title"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Author</label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Enter author"
+                formControlName="author"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Pages</label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Enter pages"
+                formControlName="pages"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Price</label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Enter price"
+                formControlName="price"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Publisher</label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="email"
+                placeholder="Enter publisher"
+                formControlName="publisher"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            id="cancel"
+            class="btn btn-secondary"
+            data-dismiss="modal"
+          >
+            Close
+          </button>
+          <button type="button" class="btn btn-primary">Add</button>
+          <button type="button" class="btn btn-success">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
